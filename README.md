@@ -1,61 +1,89 @@
-# nba-mvp-predictor
-Predicting the 2026-27 NBA MVP using XGBoost Regression, advanced analytics (True Shooting, Usage Rate), and data visualizations.  
+# NBA MVP Predictor 2026-27
 
+**Predicting the 2026-27 NBA Most Valuable Player using Machine Learning**
 
-**🏀 NBA MVP Predictor**
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-35495E?style=for-the-badge&logo=xgboost&logoColor=white)
 
-Predicting the top NBA MVP candidates for the 2026-27 season using Machine Learning.
+---
 
-**📋 Project Overview**
-This project analyzes seasonal performance data for 582 NBA players from the 2026 season to predict the top MVP (Most Valuable Player) candidates for the upcoming 2026-27 season. The model is trained using XGBoost Regression to predict player overall efficiency (EFF), which serves as our proxy score for MVP voting impact.
+## 📋 Project Overview
 
-Best Model Performance: XGBoost Regressor → R2 Score: 97.5%
+This project predicts the top MVP candidates for the 2026-27 NBA season using player performance data from the 2026 season. I used XGBoost Regression with advanced basketball metrics to estimate player impact.
 
-**📊 Model Results**
-The regressor was evaluated on an 80/20 train/test split, achieving exceptional precision in projecting player impact:
+**Best Model Performance:**
+- **XGBoost Regressor** → **R² Score: 0.9749**
 
-Metric                              Value
-Mean Absolute Error (MAE)           18.33 
-R² Score (Variance Explained)       0.9749  
+---
 
-**🏆 Top 5 Predicted Candidates**
-Based on the final model outputs, these are the projected frontrunners:
-1. Shai Gilgeous-Alexander (OKC) — 2183.81 Predicted Score
-2. Luka Dončić (LAL) — 2144.64 Predicted Score
-3. Nikola Jokić (DEN) — 2064.23 Predicted Score
-4. Victor Wembanyama (SAS) — 2037.09 Predicted Score
-5. Jalen Johnson (ATL) — 2028.32 Predicted Score
+## 📊 Model Results
 
-**🔍 Key Insights & Feature Engineering**
-To measure player efficiency and workload accurately, we engineered advanced basketball metrics:
+| Metric                        | Value     |
+|-------------------------------|-----------|
+| R² Score (Variance Explained) | **0.9749** |
+| Mean Absolute Error (MAE)     | 18.33     |
 
-**True Shooting Percentage ($TS\%$):** Measures shooting efficiency by taking 2-pointers, 3-pointers, and free throws into account:
-  
-  $$TS\text{%} = \frac{\text{PTS}}{2 \times (\text{FGA} + 0.44 \times \text{FTA})} \times 100$$
+---
 
-  **Usage Rate ($USG\%$):** Estimates the percentage of team plays used by a player while they are on the court:
-  
-  $$\text{Usage Rate} = \frac{\text{FGA} + 0.44 \times \text{FTA} + \text{TOV}}{\text{MIN}} \times 100$$
+## 🏆 Top 10 Predicted MVP Candidates (2026-27)
 
-  **Availability Threshold:** Filtering out players with $< 50$ games played ensures we only evaluate realistic, highly durable MVP candidates. 
+1. **Shai Gilgeous-Alexander (OKC)**
+2. **Luka Dončić (LAL)**
+3. **Victor Wembanyama (SAS)**
+4. **Kevin Durant (HOU)**
+5. **Nikola Jokić (DEN)**
+6. **Karl-Anthony Towns (NYK)**
+7. **Scottie Barnes (TOR)**
+8. **Tyrese Maxey (PHI)**
+9. **Amen Thompson (HOU)**
+10. **Jamal Murray (DEN)**
 
-  **🗂️ Project Structure**
-  
-  nba-mvp-predictor/
+---
+
+## 🔍 Key Insights
+
+- **Shai Gilgeous-Alexander** and **Luka Dončić** emerge as the top frontrunners.
+- Playing time (MIN) and scoring efficiency (PPG) are the most important factors for MVP prediction.
+- Advanced metrics like True Shooting Percentage and Usage Rate add significant value.
+
+**Feature Engineering:**
+- Per-game stats (PPG, RPG, APG)
+- Efficiency metrics (TS%, Usage Rate)
+- Availability filter (min 50 games)
+
+---
+
+## 🗂️ Project Structure
+nba-mvp-predictor/
 ├── notebooks/
 │   └── NBA_MVP_Prediction.ipynb
 ├── README.md
 ├── requirements.txt
 └── .gitignore
 
-**🛠️ How to Run**
-1. Clone the Repository
+
+---
+
+## 🛠️ How to Run
+
+1. Clone the repository
    ```bash
    git clone https://github.com/adas1496/nba-mvp-predictor.git
    cd nba-mvp-predictor
 
-2. Install Dependencies
+2. Install dependencies
 pip install -r requirements.txt
 
-3. Run the Notebook
-Open notebooks/NBA_MVP_Prediction.ipynb in your environment and run all cells.
+3. Run the notebook
+Open notebooks/NBA_MVP_Prediction.ipynb
+
+👤 Author
+Aman Das
+Aspiring AI/ML Engineer
+
+ ⭐**Show Your Support**
+ 
+ If you found this project useful, please give it a star!⭐ 
+
+
+  
